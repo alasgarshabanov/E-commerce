@@ -1,44 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <title>Chamb - Responsive E-commerce HTML5 Template</title>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!--enable mobile device-->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--fontawesome css-->
-      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-      <!--bootstrap css-->
-      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-      <!--animate css-->
-      <link rel="stylesheet" href="{% static 'css/animate-wow.css' %}">
-      <!--main css-->
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
-      <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/slick.min.css' %}">
-      <!--responsive css-->
-      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-   </head>
 
-   <body>
-    {% include "partials/_header.html" %}
+<head>
+   <meta charset="UTF-8">
+   <title>Chamb - Responsive E-commerce HTML5 Template</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!--enable mobile device-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!--fontawesome css-->
+   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+   <!--bootstrap css-->
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+   <!--animate css-->
+   <link rel="stylesheet" href="{% static 'css/animate-wow.css' %}">
+   <!--main css-->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}">
+   <link rel="stylesheet" href="{% static 'css/slick.min.css' %}">
+   <!--responsive css-->
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
 
-
-    {% block page %} 
-    {% endblock %}
+<body>
+   {% include "partials/_header.html" %}
 
 
-
-
-
-
-
-
-
-
-    <!-- partial:partials/_footer.html -->
-    {% include "partials/_footer.html" %}
+   {% block page %}
+   {% endblock %}
 
 
 
@@ -48,14 +37,47 @@
 
 
 
- <!--main js--> 
- <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script> 
- <!--bootstrap js--> 
- <script src="{% static 'js/bootstrap.min.js' %}"></script> 
- <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
- <script src="{% static 'js/slick.min.js' %}"></script> 
- <script src="{% static 'js/wow.min.js' %}"></script>
- <!--custom js--> 
- <script src="{% static 'js/custom.js' %}"></script>
+
+   <!-- partial:partials/_footer.html -->
+   {% include "partials/_footer.html" %}
+
+
+
+
+
+
+   <!--main js-->
+   <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+   <!--bootstrap js-->
+   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+   <script src="{% static 'js/slick.min.js' %}"></script>
+   <script src="{% static 'js/index.js' %}"></script>
+
+   <script src="{% static 'js/wow.min.js' %}"></script>
+   <!--custom js-->
+   <script src="{% static 'js/custom.js' %}"></script>
+   <script>
+      $(function () {
+         $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 2000,
+            values: [158, 1230],
+            slide: function (event, ui) {
+               $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+         });
+         $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+            " - $" + $("#slider-range").slider("values", 1));
+      });
+   </script>
+   <script src="js/jquery.nicescroll.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $("#boxscroll").niceScroll({ cursorborder: "", cursorcolor: "#ededed", boxzoom: true }); // First scrollable DIV
+      });
+   </script>
 </body>
+
 </html>
