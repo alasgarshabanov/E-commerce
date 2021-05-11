@@ -10,6 +10,8 @@ class Product(models.Model):
     image =models.ImageField()
     delivery = models.BooleanField(default=False, verbose_name="Delivery")
     price = models.PositiveIntegerField(default=0, verbose_name="Product price")
+    view_count=models.PositiveIntegerField(default=0)
+    slug = models.SlugField(unique=True, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='category')
