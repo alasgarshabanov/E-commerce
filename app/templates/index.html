@@ -287,6 +287,8 @@
             <h2>TRENDING PRODUCTS ON CHAMB</h2>
             <div class="product-slidr">
                <div class="slider">
+
+                  {% for product in products %}
                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
@@ -298,7 +300,7 @@
                                  <h4>Table with Lights</h4>
                                  <p>By <span>Beko</span> under <span>Lights</span></p>
                               </div>
-                              <a href="#">$1220</a>
+                              <a href="#">${{product.price}}</a>
                            </div>
                            <div class="dit-btn clearfix">
                               <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
@@ -307,7 +309,8 @@
                         </div>
                      </div>
                   </div>
-                  <div>
+                  {%endfor%}
+<!--                   <div>
                      <div class="prod-box">
                         <div class="prod-i">
                            <img src="{% static 'images/tr2.png'%}" alt="#" />
@@ -426,7 +429,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
          </div>

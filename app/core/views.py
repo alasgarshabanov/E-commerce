@@ -14,8 +14,14 @@ class Aboutus(TemplateView):
 class Pricing(TemplateView):
     template_name = "partials/home/pricing.html"
 
-class ProductPageView(TemplateView):
+class ProductPageView(DetailView):
+    model = Product
     template_name = "partials/home/productpage.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Product.objects.all()
+        return context
 
 class CategoryView(ListView):
     template_name = "index.html"
