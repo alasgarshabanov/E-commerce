@@ -58,7 +58,7 @@
                         <img src="{% static 'images/150x150.png'%}" alt="#" />
                      </div>
                      <div class="pof-text">
-                        <h3>Morgan Mobilya</h3>
+                        <h3>{{product.title}}</h3>
                         <div class="check-box"></div>
                      </div>
                      <a href="#">Visit store</a>
@@ -135,25 +135,25 @@
                         <div class="spe-a">
                            <h4>Specifications</h4>
                            <ul>
-                              <li class="clearfix">
+                          <!--     <li class="clearfix">
                                  <div class="col-md-4">
                                     <h5>Measurments</h5>
                                  </div>
                                  <div class="col-md-8">
                                     <p>H25 cm / 0 12 cm and H 24 cm / 0 25 cm</p>
                                  </div>
-                              </li>
+                              </li> -->
                               <li class="clearfix">
                                  <div class="col-md-4">
                                     <h5>Material</h5>
                                  </div>
                                  <div class="col-md-8">
-                                    <p>Material Name</p>
+                                    <p>{{product.material}}</p>
                                  </div>
                               </li>
                               <li class="clearfix">
                                  <div class="col-md-4">
-                                    <h5>Wire</h5>
+                                    <h5>{{product.wire}}</h5>
                                  </div>
                                  <div class="col-md-8">
                                     <p>Wire Name</p>
@@ -164,7 +164,7 @@
                                     <h5>Comdition</h5>
                                  </div>
                                  <div class="col-md-8">
-                                    <p>Brand new</p>
+                                    <p>{{product.comdition}}</p>
                                  </div>
                               </li>
                               <li class="clearfix">
@@ -172,7 +172,7 @@
                                     <h5>SKU number</h5>
                                  </div>
                                  <div class="col-md-8">
-                                    <p>SKU number</p>
+                                    <p>{{product.sku_number}}</p>
                                  </div>
                               </li>
                               <li class="clearfix">
@@ -180,7 +180,7 @@
                                     <h5>Shipping</h5>
                                  </div>
                                  <div class="col-md-8">
-                                    <p>Shipping worldwide</p>
+                                    <p> {{product.delivery}}</p>
                                  </div>
                               </li>
                               <li class="clearfix">
@@ -188,17 +188,17 @@
                                     <h5>Warranty</h5>
                                  </div>
                                  <div class="col-md-8">
-                                    <p>1 years</p>
+                                    <p>{{product.warranty}}</p>
                                  </div>
                               </li>
-                              <li class="clearfix">
+                         <!--      <li class="clearfix">
                                  <div class="col-md-4">
                                     <h5>Delivery</h5>
                                  </div>
                                  <div class="col-md-8">
                                     <p>Choose country</p>
                                  </div>
-                              </li>
+                              </li> -->
                            </ul>
                         </div>
                      </div>
@@ -291,7 +291,7 @@
                <div class="col-md-3 col-sm-12">
                   <div class="price-box-right">
                      <h4>Price</h4>
-                     <h3>$1.320 <span>pr.peice</span></h3>
+                     <h3>${{product.price}} <span>pr.peice</span></h3>
                      <p>Option</p>
                      <select class="form-control select2">
                         <option>Flying Carpet Green rug</option>

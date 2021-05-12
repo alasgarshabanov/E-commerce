@@ -15,6 +15,8 @@ class Product(models.Model):
     comdition = models.CharField(max_length=50, verbose_name="Comdition name")
     price = models.PositiveIntegerField(default=0, verbose_name="Product price")
     view_count=models.PositiveIntegerField(default=0)
+    warranty=models.CharField(max_length=50, verbose_name="Warranty")
+    sku_number=models.PositiveIntegerField(default=0, verbose_name="SKU number")
     slug = models.SlugField(unique=True, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='category')
     created_at = models.DateTimeField(auto_now_add=True, null=True)
