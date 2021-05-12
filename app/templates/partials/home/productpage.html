@@ -206,6 +206,8 @@
                   <div class="similar-box">
                      <h2>Similiar products from Morgan Mobilya</h2>
                      <div class="row cat-pd">
+                        {% for product in similar_products %}
+
                         <div class="col-md-6">
                            <div class="small-box-c">
                               <div class="small-img-b">
@@ -213,10 +215,10 @@
                               </div>
                               <div class="dit-t clearfix">
                                  <div class="left-ti">
-                                    <h4>Product</h4>
+                                    <h4>{{product.title}}</h4>
                                     <p>By <span>Beko</span> under <span>Lights</span></p>
                                  </div>
-                                 <a href="#" tabindex="0">$1220</a>
+                                 <a href="#" tabindex="0">${{product.price}}</a>
                               </div>
                               <div class="prod-btn">
                                  <a href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist</a>
@@ -225,7 +227,8 @@
                               </div>
                            </div>
                         </div>
-                        <div class="col-md-6">
+                        {%endfor%}
+                      <!--   <div class="col-md-6">
                            <div class="small-box-c">
                               <div class="small-img-b">
                                  <img class="img-responsive" src="{% static 'images/tr2.png'%}" alt="#" />
@@ -243,9 +246,9 @@
                                  <p>23 likes</p>
                               </div>
                            </div>
-                        </div>
+                        </div> -->
                      </div>
-                     <div class="row cat-pd">
+                 <!--     <div class="row cat-pd">
                         <div class="col-md-6">
                            <div class="small-box-c">
                               <div class="small-img-b">
@@ -285,7 +288,7 @@
                            </div>
                         </div>
 
-                     </div>
+                     </div> -->
                   </div>
                </div>
                <div class="col-md-3 col-sm-12">
