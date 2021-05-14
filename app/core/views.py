@@ -12,7 +12,7 @@ class Aboutus(TemplateView):
     template_name = "pages/about-us.html"
 
 class Pricing(TemplateView):
-    template_name = "partials/home/pricing.html"
+    template_name = "partials/home/category.html"
 
 class ProductPageView(DetailView):
     model = Product

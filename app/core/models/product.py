@@ -3,10 +3,12 @@ from django.db import models
 from .city import City
 from .category import Category
 from .material import Material
+from .brand import Brand
 
 class Product(models.Model):
 
     title = models.CharField(max_length=50, verbose_name="Product name")
+    brand_name = models.ForeignKey(Brand,on_delete=models.SET_NULL, null=True, verbose_name="Brand name")
     description = models.TextField(max_length=3000, null=False, blank=True)
     image =models.ImageField()
     delivery = models.BooleanField(default=False, verbose_name="Delivery")
