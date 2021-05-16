@@ -1,9 +1,12 @@
 from django.db import models
+from django.urls import reverse
+
 
 from .city import City
 from .category import Category
 from .material import Material
 from .brand import Brand
+
 
 class Product(models.Model):
 
@@ -27,3 +30,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
+
+
+    def get_absolute_url(self):
+        return reverse('product', args=[self.slug])

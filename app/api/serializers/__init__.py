@@ -1,1 +1,1 @@
-from .product import ProductSerializer
+from .product import ProductAutoCompleteSerializer
