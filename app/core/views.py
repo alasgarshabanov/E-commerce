@@ -24,12 +24,14 @@ class ProductPageView(DetailView):
         return context
 
 class CategoryView(ListView):
-    template_name = "index.html"
     model = Category
+    context_object_name="categories"
+    template_name = "index.html"
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
+        context["categories"] = Category.objects.all()
         return context
 
 class Profile(TemplateView):
